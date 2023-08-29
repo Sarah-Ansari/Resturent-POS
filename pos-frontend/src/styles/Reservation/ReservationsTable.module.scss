@@ -1,0 +1,208 @@
+@use "../variables" as *;
+
+.acceptBtn {
+  background-color: #4caf50; /* Green */
+  color: white;
+  &:hover {
+    background-color: $cancelColor;
+    color: white;
+  }
+}
+
+.pendingStatusBtn {
+  background-color: #ba710c; /* Orange */
+  color: white;
+  &:hover {
+    background-color: #1d1b05;
+    color: white;
+  }
+}
+
+.readyBtn {
+  background-color: #17afdd; /* Blue */
+  color: white;
+  
+  &:hover {
+    background-color: #062036;
+    color: white;
+  }
+}
+
+.diningBtn {
+  background-color: #0275d8; /* Dark Blue */
+  color: white;
+  &:hover {
+    background-color: #062036;
+    color: white;
+  }
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 1em;
+  width: 100%;
+  animation: fadeIn 1000ms ease-in;
+  font: 1em sans-serif;
+  &.hide {
+    display: none;
+  }
+  .Table {
+    border-radius: 1.5em;
+    border-collapse: collapse;
+    overflow: hidden;
+    width: 90%;
+    box-shadow: 0px 6px 23px -6px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    thead tr {
+      color: hsl(0, 0%, 95%);
+      background-color: darken($color: $accentColor, $amount: 2);
+      text-align: left;
+    }
+
+    
+    th,
+    td {
+      padding: 1.5em 0.9em;
+      text-align: left;
+      vertical-align: middle;
+    }
+    
+    th {
+      text-align: left;
+    }
+    
+    @media (width < 1400px) {
+      th,
+      td {
+        padding: 1.2em 0.9em;
+        text-align: left;
+        vertical-align: middle;
+        font-size: 0.9em;
+      }
+
+      th {
+        text-align: left;
+        font-size: 0.95em;
+      }
+    }
+
+    tr {
+      th:first-child {
+        padding-left: 3em;
+      }
+      td:first-child {
+        padding-left: 3em;
+      }
+
+      th:last-child {
+        padding-right: 2em;
+      }
+      td:last-child {
+        padding-right: 2em;
+      }
+    }
+
+    tbody {
+      tr:nth-child(even) {
+        background-color: #f2f3f3ef;
+      }
+      tr {
+        background-color: white;
+      }
+      tr:hover {
+        background-color: #e7e9eb;
+      }
+    }
+
+    .actionCol {
+      text-align: center;
+      transform: translateX(-10%);
+    }
+
+    .actionColCell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9em;
+    }
+
+    .statusCell {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+    padding: 0.4em 1em 0.4em 0.8em;
+    color: white;
+    border-radius: 1em;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transform: translateX(-12%);
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  }
+
+  .cancelBtn {
+    border: 1px solid $cancelColor;
+    border-radius: 1em;
+    background-color: inherit;
+    color: rgb(227, 104, 104);
+
+    &:hover {
+      background-color: $cancelColor;
+      color: white;
+    }
+  }
+
+  .acceptBtn {
+    background-color: $confirmedColor;
+    border: 1px solid darken($confirmedColor, $amount: 15);
+
+    &:hover {
+      background-color: darken($confirmedColor, $amount: 25);
+    }
+  }
+
+  .editBtn {
+    background-color: $editColor;
+    border: 1px solid rgb(76, 120, 156);
+    border-radius: 1em;
+  
+    &:hover {
+      background-color: darken($editColor, $amount: 25);
+      border-color: darken($editColor, $amount: 25);
+    }
+  }
+
+  .pendingBtn{
+    border: 1px solid $pendingColor;
+    border-radius: 1em;
+    background-color: inherit;
+    color: $pendingColor;
+
+    &:hover {
+      background-color: $pendingColor;
+      color: white;
+    }
+  }
+}
+
+.cardContainer{
+  position: fixed;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(3px);
+  background-color: #00000050;
+  z-index: 999;
+}

@@ -1,0 +1,679 @@
+{
+	"info": {
+		"_postman_id": "a86f57d0-07a6-4973-9d24-f04c8a955b61",
+		"name": "Toaster",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15042423"
+	},
+	"item": [
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 1,\r\n    \"employeeId\": 1,\r\n    \"orderItems\": [{\r\n        \"itemId\": 1,\r\n        \"quantity\": 2\r\n    }],\r\n    \"orderDate\": \"2023-08-28T16:04:23.314+00:00\",\r\n    \"grossTotal\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/order/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create OrderItem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 2,\r\n    \"orderId\": 1,\r\n    \"itemId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/order/create_order_item",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"order",
+								"create_order_item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/order/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"order",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/order/get?orderId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"order",
+								"get"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"garr\",\r\n    \"address\": \"garr' address\",\r\n    \"phone\": \"+91897654322\",\r\n    \"position\": \"waiter\",\r\n    \"dateOfBirth\": \"1990-08-21T16:04:23.314+00:00\",\r\n    \"email\": \"e2@gmail.com\",\r\n    \"password\": \"garr's password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/employee/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"employee",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/employee/get?employeeId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"employee",
+								"get"
+							],
+							"query": [
+								{
+									"key": "employeeId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/employee/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"employee",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/employee/get_by_name?name=luis",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"employee",
+								"get_by_name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "luis"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/employee/login?email=e1@gmail.com&password=luis' password",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"employee",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "e1@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "luis' password"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeId\": 1,\r\n    \"name\": \"luis\",\r\n    \"address\": \"garr' address\",\r\n    \"phone\": \"+91897654322\",\r\n    \"position\": \"waiter\",\r\n    \"dateOfBirth\": \"1990-08-21T16:04:23.314Z\",\r\n    \"email\": \"e2@gmail.com\",\r\n    \"password\": \"$2a$10$6iHkHTkKH1o6IE.gd3OZLerV2mWELSuBzK17WajaYmeBlhGSm.fv6\",\r\n    \"orders\": null,\r\n    \"age\": null,\r\n    \"salaries\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/employee/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"employee",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "List Recipe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/item/list_recipe",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"item",
+								"list_recipe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/item/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"item",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Items With Ingredient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/item/list_withIngredients",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"item",
+								"list_withIngredients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Recipe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vada Pav\",\r\n    \"details\": \"Mast Vada Pav\",\r\n    \"ingredientQuantityList\": [\"1:2\", \"2:5\", \"3:7\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/item/create_recipe",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"item",
+								"create_recipe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Chicken Tikka\",\r\n    \"category\": \"Appetizer\",\r\n    \"description\": \"Chicken Fried with Indian Masalas\",\r\n    \"listOfIngredients\": [\r\n        {\r\n            \"ingredientId\": 1,\r\n            \"quantity\": 1\r\n        }\r\n    ],\r\n    \"price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/item/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"item",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": 152,\r\n    \"name\": \"Safa\",\r\n    \"category\": \"Appetizer\",\r\n    \"description\": \"ada\",\r\n    \"ingredients\": [\r\n        {\r\n            \"ingredientId\": 52,\r\n            \"quantity\": 2\r\n        }\r\n    ],\r\n    \"price\": 40\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/item/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"item",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/item/list?itemId",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"item",
+								"list"
+							],
+							"query": [
+								{
+									"key": "itemId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ingredient",
+			"item": [
+				{
+					"name": "Create Ingredient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Chicken Tikka Masala\",\r\n    \"volume\": \"10\",\r\n    \"details\": \"Chicken Tikka Masala Powser\",\r\n    \"unit\": \"KILOGRAM\",\r\n    \"incoming\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/ingredient/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"ingredient",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Ingredient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/ingredient/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"ingredient",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Ingredient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/ingredient/delete?ingredientId=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"ingredient",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "ingredientId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"qw\",\r\n    \"contactNumber\": 98765432,\r\n    \"email\": \"q@b.c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/customer/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/customer/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/customer/delete?customerId=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"customerId\": 203,\r\n        \"name\": \"Mohsin\",\r\n        \"contactNumber\": \"98765432\",\r\n        \"email\": \"q@b.c\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/customer/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "Create Reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reservationFrom\": \"2023-08-08T08:00:00.000+00:00\",\r\n    \"reservationTo\": \"2023-08-08T10:00:00.000+00:00\",\r\n    \"customerId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/reservation/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"reservation",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Reservation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/reservation/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"reservation",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

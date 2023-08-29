@@ -1,0 +1,9 @@
+package com.toasterpos.toaster.respositories;
+
+import com.toasterpos.toaster.models.Item;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ItemRepository extends JpaRepository<Item, Long> {
+}

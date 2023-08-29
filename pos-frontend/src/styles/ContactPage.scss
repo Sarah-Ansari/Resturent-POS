@@ -1,0 +1,42 @@
+.contact-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-page h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-details p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  /* Style the submit button if you have one (from previous examples) */
+  .contact-page button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .contact-page button:hover {
+    background-color: #0056b3;
+  }
+  
