@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../services/auth.service";
 import "../styles/Login.scss";
+import  ReCAPTCHA  from "react-google-recaptcha";
 
 
 export const Login = () => {
   const [email, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [isCaptchaSuccessful, setIsCaptchaSuccess] = useState(false);
+ const  REACT_APP_RECAPTCHA_SITE_KEY="6LdIB-YnAAAAACsdPTaRQ_yib7CyV2pkq21SqVHU"
+
+  function onChange(value) {
+    setIsCaptchaSuccess(true)
+    console.log("captcha value: ", value);
+  }
 
   const navigate = useNavigate();
 
@@ -86,7 +94,11 @@ export const Login = () => {
             name="password"
             required="required"
           />
-          <button type="submit" onClick={(handleSubmit)}>
+           <ReCAPTCHA
+          sitekey={"6LdIB-YnAAAAACsdPTaRQ_yib7CyV2pkq21SqVHU"}
+          onChange={onChange}
+          />
+          <button type="submit" disabled={!isCaptchaSuccessful}>
             <b>LOGIN</b>
           </button>
           <a href="/register">
